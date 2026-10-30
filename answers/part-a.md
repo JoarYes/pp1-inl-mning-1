@@ -4,7 +4,7 @@
 
 1. Balance får inte vara negativt
 2. Får inte ändra interna variabler direkt
-3.
+3. 
 
 ## Varför skyddar inte dataclassen mot felen?
 För att alla variabler i @dataclass är publika och det går inte att ändra på det
