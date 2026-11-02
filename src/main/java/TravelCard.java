@@ -84,9 +84,9 @@ public class TravelCard {
         return lastTrip;
     }
 
-    public int getIssuedCount()
+    static int getIssuedCount()
     {
-        return cardNumber - 1000;
+        return nextCardNumber - 1001;
     }
 
     @Override
@@ -104,6 +104,6 @@ public class TravelCard {
 
         return "Card: " + cardNumber + "\n" +
                 balance + " Euro, " + tripCount + " trips \n" +
-                "Last trip: " + tripString;
+                "Last trip: " + tripString + "\n";
     }
 }

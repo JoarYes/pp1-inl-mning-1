@@ -3,8 +3,8 @@
 ## Regler som borde gälla
 
 1. Balance får inte vara negativt
-2. Får inte ändra interna variabler direkt
-3. 
+2. Användaren får inte ändra interna variabler direkt
+3. Interna fält borde inte deklareras av användaren utan genom metoder
 
 ## Varför skyddar inte dataclassen mot felen?
-För att alla variabler i @dataclass är publika och det går inte att ändra på det
+För att alla fält i @dataclass är publika och det går inte att ändra på det

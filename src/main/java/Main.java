@@ -5,19 +5,32 @@ void main() {
     var zone4 = new Zone(4, "Longport Keys East");
 
     var myCard = new TravelCard();
-    var trip = new Trip(zone2, zone3);
+    var friendCard = new TravelCard();
+
+    IO.println(myCard.toString());
+    IO.println(friendCard.toString());
 
     myCard.toUp(100);
+    friendCard.toUp(5);
 
-    myCard.travel(trip);
+    var firstTrip = new Trip(zone1, zone3);
+    var friendTrip = new Trip(zone2, zone1);
+    var otherTrip = new Trip(zone3, zone4);
 
-    IO.println(myCard.getBalance());
+    myCard.travel(firstTrip);
+    myCard.travel(friendTrip);
+    friendCard.travel(friendTrip);
+    myCard.travel(otherTrip);
 
-    myCard.toUp(-90);
+    IO.println(myCard.toString());
+    IO.println(friendCard.toString());
 
-    myCard.travel(new Trip(zone1, zone4));
+    var expensiveTrip = new Trip(zone4, zone1);
 
-    myCard.toUp(-10);
-    myCard.toUp(201);
-    IO.println(myCard.getBalance());
+    friendCard.travel(expensiveTrip);
+
+    myCard.toUp(150);
+    friendCard.toUp(-10);
+
+    IO.println(TravelCard.getIssuedCount());
 }
