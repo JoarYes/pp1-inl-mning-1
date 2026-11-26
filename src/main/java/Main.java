@@ -10,8 +10,8 @@ void main() {
     IO.println(myCard.toString());
     IO.println(friendCard.toString());
 
-    myCard.toUp(100);
-    friendCard.toUp(5);
+    myCard.topUp(100);
+    friendCard.topUp(5);
 
     var firstTrip = new Trip(zone1, zone3);
     var friendTrip = new Trip(zone2, zone1);
@@ -29,8 +29,8 @@ void main() {
 
     friendCard.travel(expensiveTrip);
 
-    myCard.toUp(150);
-    friendCard.toUp(-10);
+    myCard.topUp(150);
+    friendCard.topUp(-10);
 
     IO.println(TravelCard.getIssuedCount());
 }

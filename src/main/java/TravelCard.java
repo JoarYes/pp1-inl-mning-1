@@ -19,48 +19,59 @@ public class TravelCard {
         nextCardNumber += 1;
     }
 
-    public void toUp(int amount)
+    public boolean topUp(int amount)
     {
         if (balance + amount <= 0)
         {
             IO.println("Balance can't be negative");
+            return false;
         }
         else
         {
             if ((balance + amount) > MAX_BALANCE)
             {
                 IO.println("Exceded max balance amount");
+                return false;
             }
             else {
                 balance += amount;
+                return true;
             }
         }
     }
 
-    private void pay(int amount)
+    public boolean pay(int amount)
     {
+        if (amount <= 0) return false;
+
         if (balance - amount < 0)
         {
             IO.println("You don't have enough money");
+            return false;
         }
         else
         {
             balance -= amount;
+            return true;
         }
     }
 
-    public void travel(Trip trip)
+    public boolean travel(Trip trip)
     {
         if (trip != null)
         {
-            pay(trip.getPrice());
+            if (!pay(trip.getPrice())) return false;
 
             tripCount += 1;
             lastTrip = trip;
+
+            return true;
         }
         else
         {
             IO.println("Trip must not be null");
+
+            return false;
         }
     }
 
